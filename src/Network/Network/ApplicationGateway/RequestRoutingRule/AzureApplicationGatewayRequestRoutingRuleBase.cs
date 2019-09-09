@@ -33,6 +33,12 @@ namespace Microsoft.Azure.Commands.Network
         public string RuleType { get; set; }
 
         [Parameter(
+                Mandatory = false,
+                HelpMessage = "Priority of the rule. Valid values are between 1 and 20000")]
+        [ValidateNotNullOrEmpty]
+        public int Priority { get; set; }
+
+        [Parameter(
                 ParameterSetName = "SetByResourceId",
                 HelpMessage = "ID of the application gateway BackendHttpSettings")]
         [ValidateNotNullOrEmpty]
